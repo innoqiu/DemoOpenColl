@@ -1,0 +1,873 @@
+{
+  "schemaVersion": "0.5.0",
+  "workspace": {
+    "name": "AI Proxy Communication Literature Review",
+    "repo": "innoqiu/DemoOpenColl",
+    "branch": "main",
+    "locked": true,
+    "statusFile": "opencollab/Task_Status.json",
+    "currentActorId": "mira",
+    "updatedAt": "2026-06-28T11:35:00.000Z"
+  },
+  "commands": {
+    "def": "/ocb def --repo <owner/repo> --workspace <name> --actor <id> --signature <text> --color <hex>",
+    "init": "/ocb init --task <brief> --source <cloud-doc-url>",
+    "run": "/ocb run  # compatibility alias for /ocb init during the demo period",
+    "pull": "/ocb pull",
+    "push": "/ocb push",
+    "mtg": "/ocb mtg --title <meeting> --task <taskId> --notes <text>"
+  },
+  "protocol": {
+    "cloudDocument": "https://github.com/innoqiu/DemoOpenColl/blob/main/opencollab/TTask_Status.json",
+    "commandProtocol": "opencollab/PROTOCOL_COMMANDS.md",
+    "interdependenceFramework": "opencollab/INTERDEPENDENCE_CONFLICT_FRAMEWORK.md",
+    "promptLibrary": "opencollab/PROMPTS.md",
+    "agentEntryFiles": [
+      "AGENTS.md",
+      "CLAUDE.md",
+      ".claude/commands/ocb.md"
+    ],
+    "initSummary": "Create task interfaces for a shared literature review and expose writing/evidence boundaries."
+  },
+  "taskBrief": {
+    "path": "opencollab/TTask_Status.json",
+    "cloudDocument": "https://github.com/innoqiu/DemoOpenColl/blob/main/opencollab/TTask_Status.json",
+    "firstReadOrder": [
+      "AGENTS.md",
+      "CLAUDE.md",
+      "opencollab/PROTOCOL_COMMANDS.md",
+      "opencollab/TTask_Status.json",
+      "opencollab/Task_Status.json",
+      "opencollab/Task_Status.schema.json",
+      "opencollab/INTERDEPENDENCE_CONFLICT_FRAMEWORK.md",
+      "opencollab/PROMPTS.md",
+      "opencollab/AGENT.md",
+      "README.md"
+    ],
+    "lastReviewedAt": "2026-06-28T11:35:00.000Z"
+  },
+  "members": [
+    {
+      "id": "mira",
+      "displayName": "Mira Scope Lead",
+      "signature": "MI",
+      "color": "#65b8a6",
+      "role": "human",
+      "active": true
+    },
+    {
+      "id": "noah",
+      "displayName": "Noah Evidence Lead",
+      "signature": "NO",
+      "color": "#d6a85b",
+      "role": "human",
+      "active": true
+    },
+    {
+      "id": "lin",
+      "displayName": "Lin Synthesis Writer",
+      "signature": "LI",
+      "color": "#6fa8dc",
+      "role": "human",
+      "active": true
+    },
+    {
+      "id": "priya",
+      "displayName": "Priya Integration Editor",
+      "signature": "PR",
+      "color": "#d98291",
+      "role": "human",
+      "active": true
+    }
+  ],
+  "categories": [
+    {
+      "id": "scope",
+      "label": "Scope",
+      "color": "#65b8a6"
+    },
+    {
+      "id": "evidence",
+      "label": "Evidence",
+      "color": "#d6a85b"
+    },
+    {
+      "id": "synthesis",
+      "label": "Synthesis",
+      "color": "#6fa8dc"
+    },
+    {
+      "id": "writing",
+      "label": "Writing",
+      "color": "#d98291"
+    },
+    {
+      "id": "integration",
+      "label": "Integration",
+      "color": "#9aa0ad"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "AIPC-01",
+      "title": "Project brief and review question",
+      "category": "scope",
+      "state": "done",
+      "claimantId": "mira",
+      "grid": {
+        "x": 2,
+        "y": 2,
+        "w": 1,
+        "h": 1
+      },
+      "summary": "Define the review subsection, audience, and claim boundaries.",
+      "touches": [
+        "docs/project-brief.md"
+      ],
+      "interfaces": {
+        "inputs": [
+          "paper topic",
+          "course scope"
+        ],
+        "outputs": [
+          "review question",
+          "definition guardrail"
+        ],
+        "boundaryNotes": [
+          "All synthesis tasks should preserve this scope unless a meeting changes it."
+        ]
+      },
+      "updatedAt": "2026-06-28T11:35:00.000Z",
+      "progress": 100
+    },
+    {
+      "id": "AIPC-02",
+      "title": "Core definitions note",
+      "category": "scope",
+      "state": "active",
+      "claimantId": "mira",
+      "grid": {
+        "x": 3,
+        "y": 2,
+        "w": 1,
+        "h": 1
+      },
+      "summary": "Clarify proxy communication, communication boundary, and delegated voice.",
+      "touches": [
+        "docs/lit-review/definitions.md"
+      ],
+      "interfaces": {
+        "inputs": [
+          "project brief",
+          "seed readings"
+        ],
+        "outputs": [
+          "definition note"
+        ],
+        "boundaryNotes": [
+          "Draft writers should use these terms consistently."
+        ]
+      },
+      "updatedAt": "2026-06-28T11:35:00.000Z",
+      "progress": 70
+    },
+    {
+      "id": "AIPC-03",
+      "title": "Search strategy",
+      "category": "evidence",
+      "state": "done",
+      "claimantId": "noah",
+      "grid": {
+        "x": 5,
+        "y": 2,
+        "w": 1,
+        "h": 1
+      },
+      "summary": "Define search strings, inclusion criteria, and exclusion criteria.",
+      "touches": [
+        "docs/lit-review/search-strategy.md"
+      ],
+      "interfaces": {
+        "inputs": [
+          "review question"
+        ],
+        "outputs": [
+          "search protocol"
+        ],
+        "boundaryNotes": [
+          "Evidence claims should come from this search frame."
+        ]
+      },
+      "updatedAt": "2026-06-28T11:35:00.000Z",
+      "progress": 100
+    },
+    {
+      "id": "AIPC-04",
+      "title": "Annotated literature matrix",
+      "category": "evidence",
+      "state": "active",
+      "claimantId": "noah",
+      "grid": {
+        "x": 6,
+        "y": 2,
+        "w": 1,
+        "h": 1
+      },
+      "summary": "Collect sources and code communication surfaces, mechanisms, and evidence status.",
+      "touches": [
+        "data/literature-matrix.csv"
+      ],
+      "interfaces": {
+        "inputs": [
+          "search strategy",
+          "source PDFs"
+        ],
+        "outputs": [
+          "coded literature matrix"
+        ],
+        "boundaryNotes": [
+          "Synthesis should not cite mechanisms missing from this matrix."
+        ]
+      },
+      "updatedAt": "2026-06-28T11:35:00.000Z",
+      "progress": 55
+    },
+    {
+      "id": "AIPC-05",
+      "title": "Case coding memo",
+      "category": "evidence",
+      "state": "claimed",
+      "claimantId": "noah",
+      "grid": {
+        "x": 7,
+        "y": 2,
+        "w": 1,
+        "h": 1
+      },
+      "summary": "Write a short memo explaining ambiguous source coding decisions.",
+      "touches": [
+        "docs/lit-review/case-coding-memo.md"
+      ],
+      "interfaces": {
+        "inputs": [
+          "literature matrix"
+        ],
+        "outputs": [
+          "coding rationale memo"
+        ],
+        "boundaryNotes": [
+          "Needed before final citation consistency pass."
+        ]
+      },
+      "updatedAt": "2026-06-28T11:35:00.000Z",
+      "progress": 0
+    },
+    {
+      "id": "AIPC-06",
+      "title": "Communication breakdown taxonomy",
+      "category": "scope",
+      "state": "active",
+      "claimantId": "mira",
+      "grid": {
+        "x": 3,
+        "y": 5,
+        "w": 1,
+        "h": 1
+      },
+      "summary": "Organize breakdowns such as compression loss, voice drift, timing mismatch, and responsibility blur.",
+      "touches": [
+        "docs/lit-review/breakdown-taxonomy.md"
+      ],
+      "interfaces": {
+        "inputs": [
+          "definition note",
+          "source examples"
+        ],
+        "outputs": [
+          "breakdown taxonomy"
+        ],
+        "boundaryNotes": [
+          "Risk synthesis must use the same category names."
+        ]
+      },
+      "updatedAt": "2026-06-28T11:35:00.000Z",
+      "progress": 50
+    },
+    {
+      "id": "AIPC-07",
+      "title": "Proxy mechanism synthesis",
+      "category": "synthesis",
+      "state": "active",
+      "claimantId": "lin",
+      "grid": {
+        "x": 5,
+        "y": 5,
+        "w": 1,
+        "h": 1
+      },
+      "summary": "Synthesize summarizing, filtering, rephrasing, delegating, and coordinating as proxy mechanisms.",
+      "touches": [
+        "docs/lit-review/proxy-mechanisms.md"
+      ],
+      "interfaces": {
+        "inputs": [
+          "literature matrix",
+          "definition note"
+        ],
+        "outputs": [
+          "mechanism synthesis"
+        ],
+        "boundaryNotes": [
+          "Claims must trace to coded evidence before they move into the draft."
+        ]
+      },
+      "updatedAt": "2026-06-28T11:35:00.000Z",
+      "progress": 45
+    },
+    {
+      "id": "AIPC-08",
+      "title": "Risks and ethics synthesis",
+      "category": "synthesis",
+      "state": "undo",
+      "claimantId": null,
+      "grid": {
+        "x": 7,
+        "y": 5,
+        "w": 1,
+        "h": 1
+      },
+      "summary": "Summarize accountability, nuance loss, voice drift, and hidden labor risks.",
+      "touches": [
+        "docs/lit-review/ethics-risks.md"
+      ],
+      "interfaces": {
+        "inputs": [
+          "breakdown taxonomy",
+          "mechanism synthesis"
+        ],
+        "outputs": [
+          "risk synthesis"
+        ],
+        "boundaryNotes": [
+          "Should not duplicate the taxonomy; it should interpret implications."
+        ]
+      },
+      "updatedAt": "2026-06-28T11:35:00.000Z",
+      "progress": 0
+    },
+    {
+      "id": "AIPC-09",
+      "title": "Mechanism comparison table",
+      "category": "synthesis",
+      "state": "active",
+      "claimantId": "lin",
+      "grid": {
+        "x": 9,
+        "y": 5,
+        "w": 1,
+        "h": 1
+      },
+      "summary": "Create a compact table linking mechanisms to communication surfaces, evidence, and risks.",
+      "touches": [
+        "docs/lit-review/mechanism-table.md"
+      ],
+      "interfaces": {
+        "inputs": [
+          "literature matrix",
+          "mechanism synthesis"
+        ],
+        "outputs": [
+          "comparison table"
+        ],
+        "boundaryNotes": [
+          "The final draft can cite this table as the bridge from evidence to prose."
+        ]
+      },
+      "updatedAt": "2026-06-28T11:35:00.000Z",
+      "progress": 35
+    },
+    {
+      "id": "AIPC-10",
+      "title": "Section outline",
+      "category": "writing",
+      "state": "done",
+      "claimantId": "priya",
+      "grid": {
+        "x": 10,
+        "y": 5,
+        "w": 1,
+        "h": 1
+      },
+      "summary": "Define the section order and integration checkpoints.",
+      "touches": [
+        "docs/lit-review/section-outline.md"
+      ],
+      "interfaces": {
+        "inputs": [
+          "project brief",
+          "definition note"
+        ],
+        "outputs": [
+          "section outline"
+        ],
+        "boundaryNotes": [
+          "Draft sections should follow this order unless the team changes it."
+        ]
+      },
+      "updatedAt": "2026-06-28T11:35:00.000Z",
+      "progress": 100
+    },
+    {
+      "id": "AIPC-11",
+      "title": "Draft background paragraphs",
+      "category": "writing",
+      "state": "active",
+      "claimantId": "lin",
+      "grid": {
+        "x": 4,
+        "y": 8,
+        "w": 1,
+        "h": 1
+      },
+      "summary": "Write opening paragraphs that distinguish proxy communication from ordinary AI writing assistance.",
+      "touches": [
+        "draft/literature-review.md"
+      ],
+      "interfaces": {
+        "inputs": [
+          "section outline",
+          "definition note"
+        ],
+        "outputs": [
+          "background draft"
+        ],
+        "boundaryNotes": [
+          "Shares the same draft file with Priya's proxy subsection."
+        ]
+      },
+      "updatedAt": "2026-06-28T11:35:00.000Z",
+      "progress": 40
+    },
+    {
+      "id": "AIPC-12",
+      "title": "Draft proxy communication subsection",
+      "category": "writing",
+      "state": "active",
+      "claimantId": "priya",
+      "grid": {
+        "x": 6,
+        "y": 8,
+        "w": 1,
+        "h": 1
+      },
+      "summary": "Write the main subsection explaining mechanisms and why boundary visibility matters.",
+      "touches": [
+        "draft/literature-review.md"
+      ],
+      "interfaces": {
+        "inputs": [
+          "mechanism synthesis",
+          "comparison table"
+        ],
+        "outputs": [
+          "AI proxy communication draft"
+        ],
+        "boundaryNotes": [
+          "Should wait for mechanism evidence before making strong claims."
+        ]
+      },
+      "updatedAt": "2026-06-28T11:35:00.000Z",
+      "progress": 30
+    },
+    {
+      "id": "AIPC-13",
+      "title": "Citation consistency pass",
+      "category": "integration",
+      "state": "undo",
+      "claimantId": null,
+      "grid": {
+        "x": 8,
+        "y": 8,
+        "w": 1,
+        "h": 1
+      },
+      "summary": "Check that draft claims, citations, and matrix evidence match.",
+      "touches": [
+        "docs/lit-review/citation-check.md"
+      ],
+      "interfaces": {
+        "inputs": [
+          "draft section",
+          "literature matrix",
+          "case coding memo"
+        ],
+        "outputs": [
+          "citation consistency notes"
+        ],
+        "boundaryNotes": [
+          "Run after the draft and matrix stabilize."
+        ]
+      },
+      "updatedAt": "2026-06-28T11:35:00.000Z",
+      "progress": 0
+    },
+    {
+      "id": "AIPC-14",
+      "title": "Boundary review and final merge",
+      "category": "integration",
+      "state": "claimed",
+      "claimantId": "priya",
+      "grid": {
+        "x": 10,
+        "y": 8,
+        "w": 1,
+        "h": 1
+      },
+      "summary": "Review definitions, evidence, and draft wording before final merge.",
+      "touches": [
+        "docs/lit-review/boundary-review.md"
+      ],
+      "interfaces": {
+        "inputs": [
+          "draft section",
+          "citation pass",
+          "risk synthesis"
+        ],
+        "outputs": [
+          "merge readiness notes"
+        ],
+        "boundaryNotes": [
+          "Unresolved conflicts should become meeting agenda items."
+        ]
+      },
+      "updatedAt": "2026-06-28T11:35:00.000Z",
+      "progress": 0
+    }
+  ],
+  "links": [
+    {
+      "id": "ln-01",
+      "source": "AIPC-01",
+      "target": "AIPC-02",
+      "kind": "dependency",
+      "info": "Definitions depend on the review question and scope.",
+      "createdBy": "agent",
+      "createdAt": "2026-06-28T11:35:00.000Z"
+    },
+    {
+      "id": "ln-02",
+      "source": "AIPC-01",
+      "target": "AIPC-03",
+      "kind": "dependency",
+      "info": "The search strategy depends on the agreed review scope.",
+      "createdBy": "agent",
+      "createdAt": "2026-06-28T11:35:00.000Z"
+    },
+    {
+      "id": "ln-03",
+      "source": "AIPC-03",
+      "target": "AIPC-04",
+      "kind": "dependency",
+      "info": "The literature matrix depends on the search strategy.",
+      "createdBy": "agent",
+      "createdAt": "2026-06-28T11:35:00.000Z"
+    },
+    {
+      "id": "ln-04",
+      "source": "AIPC-04",
+      "target": "AIPC-05",
+      "kind": "dependency",
+      "info": "The coding memo depends on ambiguous rows in the matrix.",
+      "createdBy": "agent",
+      "createdAt": "2026-06-28T11:35:00.000Z"
+    },
+    {
+      "id": "ln-05",
+      "source": "AIPC-02",
+      "target": "AIPC-06",
+      "kind": "dependency",
+      "info": "The breakdown taxonomy depends on stable definitions.",
+      "createdBy": "agent",
+      "createdAt": "2026-06-28T11:35:00.000Z"
+    },
+    {
+      "id": "ln-06",
+      "source": "AIPC-02",
+      "target": "AIPC-07",
+      "kind": "dependency",
+      "info": "The mechanism synthesis depends on the definition of proxy communication.",
+      "createdBy": "agent",
+      "createdAt": "2026-06-28T11:35:00.000Z"
+    },
+    {
+      "id": "ln-07",
+      "source": "AIPC-04",
+      "target": "AIPC-07",
+      "kind": "dependency",
+      "info": "The mechanism synthesis depends on coded evidence in the matrix.",
+      "createdBy": "agent",
+      "createdAt": "2026-06-28T11:35:00.000Z"
+    },
+    {
+      "id": "ln-08",
+      "source": "AIPC-06",
+      "target": "AIPC-08",
+      "kind": "dependency",
+      "info": "Risk synthesis depends on the breakdown taxonomy.",
+      "createdBy": "agent",
+      "createdAt": "2026-06-28T11:35:00.000Z"
+    },
+    {
+      "id": "ln-09",
+      "source": "AIPC-07",
+      "target": "AIPC-08",
+      "kind": "dependency",
+      "info": "Risk synthesis should interpret the mechanisms rather than introduce a separate frame.",
+      "createdBy": "agent",
+      "createdAt": "2026-06-28T11:35:00.000Z"
+    },
+    {
+      "id": "ln-10",
+      "source": "AIPC-04",
+      "target": "AIPC-09",
+      "kind": "dependency",
+      "info": "The comparison table depends on matrix evidence.",
+      "createdBy": "agent",
+      "createdAt": "2026-06-28T11:35:00.000Z"
+    },
+    {
+      "id": "ln-11",
+      "source": "AIPC-07",
+      "target": "AIPC-09",
+      "kind": "dependency",
+      "info": "The comparison table depends on the current mechanism synthesis.",
+      "createdBy": "agent",
+      "createdAt": "2026-06-28T11:35:00.000Z"
+    },
+    {
+      "id": "ln-12",
+      "source": "AIPC-10",
+      "target": "AIPC-11",
+      "kind": "dependency",
+      "info": "The background draft follows the section outline.",
+      "createdBy": "agent",
+      "createdAt": "2026-06-28T11:35:00.000Z"
+    },
+    {
+      "id": "ln-13",
+      "source": "AIPC-10",
+      "target": "AIPC-12",
+      "kind": "dependency",
+      "info": "The main subsection follows the section outline.",
+      "createdBy": "agent",
+      "createdAt": "2026-06-28T11:35:00.000Z"
+    },
+    {
+      "id": "ln-14",
+      "source": "AIPC-07",
+      "target": "AIPC-12",
+      "kind": "dependency",
+      "info": "The main subsection depends on the mechanism synthesis.",
+      "createdBy": "agent",
+      "createdAt": "2026-06-28T11:35:00.000Z"
+    },
+    {
+      "id": "ln-15",
+      "source": "AIPC-09",
+      "target": "AIPC-12",
+      "kind": "dependency",
+      "info": "The subsection should use the comparison table as evidence bridge.",
+      "createdBy": "agent",
+      "createdAt": "2026-06-28T11:35:00.000Z"
+    },
+    {
+      "id": "ln-16",
+      "source": "AIPC-04",
+      "target": "AIPC-13",
+      "kind": "dependency",
+      "info": "Citation consistency depends on the evidence matrix.",
+      "createdBy": "agent",
+      "createdAt": "2026-06-28T11:35:00.000Z"
+    },
+    {
+      "id": "ln-17",
+      "source": "AIPC-11",
+      "target": "AIPC-13",
+      "kind": "dependency",
+      "info": "Citation checking depends on a stable background draft.",
+      "createdBy": "agent",
+      "createdAt": "2026-06-28T11:35:00.000Z"
+    },
+    {
+      "id": "ln-18",
+      "source": "AIPC-12",
+      "target": "AIPC-13",
+      "kind": "dependency",
+      "info": "Citation checking depends on a stable proxy subsection.",
+      "createdBy": "agent",
+      "createdAt": "2026-06-28T11:35:00.000Z"
+    },
+    {
+      "id": "ln-19",
+      "source": "AIPC-13",
+      "target": "AIPC-14",
+      "kind": "dependency",
+      "info": "Final merge depends on citation consistency notes.",
+      "createdBy": "agent",
+      "createdAt": "2026-06-28T11:35:00.000Z"
+    },
+    {
+      "id": "ln-20",
+      "source": "AIPC-04",
+      "target": "AIPC-07",
+      "kind": "boundary",
+      "info": "Noah and Lin must align source coding with mechanism claims before the synthesis hardens.",
+      "createdBy": "agent",
+      "createdAt": "2026-06-28T11:35:00.000Z"
+    },
+    {
+      "id": "ln-21",
+      "source": "AIPC-02",
+      "target": "AIPC-11",
+      "kind": "boundary",
+      "info": "Mira and Lin must keep definitions consistent between the note and background paragraphs.",
+      "createdBy": "agent",
+      "createdAt": "2026-06-28T11:35:00.000Z"
+    },
+    {
+      "id": "ln-22",
+      "source": "AIPC-11",
+      "target": "AIPC-12",
+      "kind": "sync",
+      "info": "Lin and Priya are both editing the same draft file and need a short writing-boundary sync.",
+      "createdBy": "agent",
+      "createdAt": "2026-06-28T11:35:00.000Z"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "tl-aipc-001",
+      "type": "meeting",
+      "actorId": "mira",
+      "taskIds": [
+        "AIPC-01",
+        "AIPC-02",
+        "AIPC-03"
+      ],
+      "title": "Kickoff: AI proxy communication review",
+      "details": "Team agreed to define proxy communication narrowly and keep all claims traceable to the evidence matrix.",
+      "createdAt": "2026-06-28T11:35:00.000Z",
+      "adds": [
+        "TTask_Status.json",
+        "Task_Status.json",
+        "project brief"
+      ]
+    },
+    {
+      "id": "tl-aipc-002",
+      "type": "update",
+      "actorId": "noah",
+      "taskIds": [
+        "AIPC-03",
+        "AIPC-04"
+      ],
+      "title": "Search strategy and source matrix started",
+      "details": "Search strategy is ready and the first four sources are entered in the matrix.",
+      "createdAt": "2026-06-28T11:35:00.000Z",
+      "adds": [
+        "docs/lit-review/search-strategy.md",
+        "data/literature-matrix.csv"
+      ]
+    },
+    {
+      "id": "tl-aipc-003",
+      "type": "update",
+      "actorId": "lin",
+      "taskIds": [
+        "AIPC-07",
+        "AIPC-11"
+      ],
+      "title": "Mechanism synthesis and draft background started",
+      "details": "Lin began the synthesis note and the opening draft, creating an active boundary with the source matrix and Priya's draft section.",
+      "createdAt": "2026-06-28T11:35:00.000Z",
+      "adds": [
+        "docs/lit-review/proxy-mechanisms.md",
+        "draft/literature-review.md"
+      ]
+    }
+  ],
+  "meetings": [
+    {
+      "id": "mtg-aipc-001",
+      "title": "Kickoff: AI proxy communication review",
+      "taskIds": [
+        "AIPC-01",
+        "AIPC-02",
+        "AIPC-03"
+      ],
+      "notes": "Use a narrow definition of proxy communication and require evidence links for mechanism claims.",
+      "createdAt": "2026-06-28T11:35:00.000Z"
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "shared-file-AIPC-11-AIPC-12",
+      "type": "shared-file",
+      "severity": "high",
+      "taskIds": [
+        "AIPC-11",
+        "AIPC-12"
+      ],
+      "memberIds": [
+        "lin",
+        "priya"
+      ],
+      "title": "Two writers are editing the same draft file",
+      "message": "AIPC-11 and AIPC-12 both touch draft/literature-review.md while active. LI and PR should agree section boundaries before the next push.",
+      "detectedAt": "2026-06-28T11:35:00.000Z",
+      "resolved": false
+    },
+    {
+      "id": "boundary-AIPC-04-AIPC-07",
+      "type": "boundary-sync",
+      "severity": "medium",
+      "taskIds": [
+        "AIPC-04",
+        "AIPC-07"
+      ],
+      "memberIds": [
+        "noah",
+        "lin"
+      ],
+      "title": "Evidence and synthesis need alignment",
+      "message": "AIPC-04 and AIPC-07 are both active. NO and LI should confirm that every mechanism claim has matrix support.",
+      "detectedAt": "2026-06-28T11:35:00.000Z",
+      "resolved": false
+    },
+    {
+      "id": "boundary-AIPC-02-AIPC-11",
+      "type": "boundary-sync",
+      "severity": "medium",
+      "taskIds": [
+        "AIPC-02",
+        "AIPC-11"
+      ],
+      "memberIds": [
+        "mira",
+        "lin"
+      ],
+      "title": "Definition wording may drift in the draft",
+      "message": "AIPC-02 and AIPC-11 are both active. MI and LI should align the definition before background wording is finalized.",
+      "detectedAt": "2026-06-28T11:35:00.000Z",
+      "resolved": false
+    }
+  ],
+  "view": {
+    "board": {
+      "cols": 14,
+      "rows": 12
+    },
+    "taskIdPrefix": "AIPC",
+    "progressSteps": 24
+  }
+}

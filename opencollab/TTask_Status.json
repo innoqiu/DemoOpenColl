@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "T-0.2.0",
+  "kind": "OpenCollab Tiny Task Status",
+  "project": {
+    "name": "AI Proxy Communication Literature Review",
+    "repo": "innoqiu/DemoOpenColl",
+    "statusTarget": "opencollab/Task_Status.json",
+    "cloudDocument": "https://github.com/innoqiu/DemoOpenColl/blob/main/opencollab/TTask_Status.json",
+    "output": "A concise literature review subsection explaining how AI can proxy, mediate, or transform communication between people.",
+    "audience": "A four-person research team preparing a shared literature review draft",
+    "collaborationMode": "Local-first GitHub JSON sync through OpenCollab"
+  },
+  "brief": {
+    "assignment": "Write the literature review subsection 'Using AI to Proxy Communication' for a broader research paper on AI-mediated collaboration.",
+    "finalDeliverables": [
+      "source search strategy",
+      "annotated literature matrix",
+      "definition and taxonomy notes",
+      "mechanism synthesis",
+      "draft literature review subsection",
+      "boundary review notes"
+    ],
+    "constraints": [
+      "four human collaborators",
+      "claims in the draft must trace back to the source matrix",
+      "definitions must stay consistent across notes and draft",
+      "two writers may touch the same draft file, so boundary conflicts must be explicit"
+    ]
+  },
+  "members": [
+    {
+      "id": "mira",
+      "displayName": "Mira Scope Lead",
+      "signature": "MI",
+      "role": "human"
+    },
+    {
+      "id": "noah",
+      "displayName": "Noah Evidence Lead",
+      "signature": "NO",
+      "role": "human"
+    },
+    {
+      "id": "lin",
+      "displayName": "Lin Synthesis Writer",
+      "signature": "LI",
+      "role": "human"
+    },
+    {
+      "id": "priya",
+      "displayName": "Priya Integration Editor",
+      "signature": "PR",
+      "role": "human"
+    }
+  ],
+  "workPackages": [
+    {
+      "id": "WP-01",
+      "label": "Scope and definitions",
+      "intent": "Lock the research question, key terms, and communication-breakdown taxonomy.",
+      "candidateInterfaces": [
+        "project brief",
+        "definition note",
+        "breakdown taxonomy"
+      ]
+    },
+    {
+      "id": "WP-02",
+      "label": "Evidence matrix",
+      "intent": "Collect sources and code evidence for proxy communication mechanisms.",
+      "candidateInterfaces": [
+        "search strategy",
+        "literature matrix",
+        "case coding"
+      ]
+    },
+    {
+      "id": "WP-03",
+      "label": "Synthesis",
+      "intent": "Turn the matrix into concepts, comparison tables, and mechanism claims.",
+      "candidateInterfaces": [
+        "proxy mechanism synthesis",
+        "risk and ethics synthesis",
+        "comparison table"
+      ]
+    },
+    {
+      "id": "WP-04",
+      "label": "Draft integration",
+      "intent": "Write, align, cite, and merge the final literature review subsection.",
+      "candidateInterfaces": [
+        "section outline",
+        "background draft",
+        "AI proxy communication draft",
+        "citation pass",
+        "boundary review"
+      ]
+    }
+  ],
+  "classificationHints": [
+    "Use dependency edges when one artifact must exist before another can be accurate.",
+    "Use boundary edges when two owners touch the same concept, claim, file, or citation surface.",
+    "Use sync edges when active tasks should pause for a short alignment meeting.",
+    "Do not hide writing conflicts inside prose; represent them as task interface boundaries."
+  ],
+  "createdAt": "2026-06-28T11:35:00.000Z"
+}

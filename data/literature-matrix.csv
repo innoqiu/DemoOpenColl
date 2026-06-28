@@ -1,0 +1,5 @@
+id,citation,communication_surface,proxy_mechanism,evidence_status,note
+S01,"Collaborative document editing with multiple users and AI agents",shared writing,coordinating,coded,"Useful for boundary-aware collaboration claims."
+S02,"CoPrompt: prompt sharing and referring in collaborative programming",team prompting,summarizing,partial,"May support shared context and reuse."
+S03,"GraftMind: AI-mediated idea sharing",group ideation,filtering,partial,"Useful for idea routing and visibility."
+S04,"AI-mediated communication workshop paper",research framing,rephrasing,uncoded,"Needs careful reading before citing."
